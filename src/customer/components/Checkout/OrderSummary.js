@@ -27,20 +27,17 @@ const OrderSummary = () => {
 
   return (
     <div className='my-10'>
-      <div className='p-5 shadow-lg rounded-s-md h-screen overflow-y-scroll' id='order-summary'>
 
-        {/* <AddressCard /> */}
-        <div className='flex flex-wrap items-center justify-between p-3 rounded-lg' style={{ border: '1px solid #500724' }}>
-          <div className='space-y-2'>
-            <h1 className='text-lg font-semibold'>{order.order?.shippingAddress.firstName+" "+order.order?.shippingAddress.lastName}</h1>
-            <p className='text-sm text-gray-500 font-normal'>{order.order?.shippingAddress.streetAddress}, {order.order?.shippingAddress.city}, {order.order?.shippingAddress.zipCode}</p>
-            <p className='text-sm text-gray-500 font-normal'>Phone : {order.order?.shippingAddress.mobile}</p>
-          </div>
-
+      {/* <AddressCard /> */}
+      <div className='flex flex-wrap items-center justify-between p-3 rounded-lg m-5' style={{ border: '1px solid #500724' }}>
+        <div className='space-y-2'>
+          <h1 className='text-lg font-semibold'>{order.order?.shippingAddress.firstName + " " + order.order?.shippingAddress.lastName}</h1>
+          <p className='text-sm text-gray-500 font-normal'>{order.order?.shippingAddress.streetAddress}, {order.order?.shippingAddress.city}, {order.order?.shippingAddress.zipCode}</p>
+          <p className='text-sm text-gray-500 font-normal'>Phone : {order.order?.shippingAddress.mobile}</p>
         </div>
+      </div>
 
-        <hr />
-
+      <div className='p-5 shadow-lg rounded-s-md lg:h-screen md:lg:h-screen h-auto overflow-y-scroll' id='order-summary'>
         {/* <Cart />*/}
         <div>
           <div className='lg:grid grid-cols-3 relative'>
@@ -54,8 +51,8 @@ const OrderSummary = () => {
                     </div>
                     <div className='ml-5 space-y-1'>
                       <p className='font-semibold text-xl'>{item.product?.title}</p>
-                      <p className='text-sm py-1 text-gray-400 font-medium'>Weight : {item.weight} 
-                      {/* | Size : 16.40 MM */}
+                      <p className='text-sm py-1 text-gray-400 font-medium'>Weight : {item.weight}
+                        {/* | Size : 16.40 MM */}
                       </p>
                       <p className='text-sm  text-gray-400 font-medium'>Quantity: {item.quantity}</p>
 
@@ -63,7 +60,7 @@ const OrderSummary = () => {
                         <p className="font-semibold lg:text-xl">₹ {item.product?.discountedPrice}</p>
                         <p className="opacity-50 line-through lg:text-base">₹ {item.product?.price}</p>
                         <p className="font-semibold text-red-500 lg:text-sm">
-                        {item.product?.discountPercent}% off
+                          {item.product?.discountPercent}% off
                         </p>
                       </div>
                     </div>
@@ -73,7 +70,7 @@ const OrderSummary = () => {
 
             </div>
 
-            <div className='pl-10 sticky top-0 h-[100vh] mt-5 lg:mt-0'>
+            <div className='lg:pl-10 md:pl-10 sticky top-0 h-[100vh] mt-5 lg:mt-0'>
               <div className='rounded-lg shadow-md p-5 pb-0'>
                 <h1
                   className='uppercase font-semibold text-lg pb-4'

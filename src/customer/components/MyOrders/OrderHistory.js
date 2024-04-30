@@ -68,7 +68,7 @@ const OrderHistory = () => {
   return (
     !order?.orders ?
       <Loading /> :
-      (<div className="p-5">
+      (<div className="lg:p-5 md:p-4 sm:p-2">
         <Grid container>
           {/* <Grid item xs={2.5}>
           <div className="h-auto shadow-md bg-white p-5 sticky top-5">

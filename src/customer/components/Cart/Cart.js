@@ -60,12 +60,12 @@ const Cart = () => {
 
                                         <div className='flex justify-between pt-3'>
                                             <span>Discount</span>
-                                            <span className='text-green-600'>{cart.cart?.discount} %</span>
+                                            <span className='text-red-600'>{cart.cart?.discount} %</span>
                                         </div>
 
                                         <div className='flex justify-between pt-3'>
                                             <span>Delivery Charge</span>
-                                            <span className='text-green-600'>FREE</span>
+                                            <span className='text-red-600'>FREE</span>
                                         </div>
                                         <hr />
                                         <div
@@ -97,7 +97,7 @@ const Cart = () => {
                                 <img src="https://res.cloudinary.com/deq0hxr3t/image/upload/v1709462235/no-found_mnvvpf.svg" alt="" />
                                 <h1 style={{ color: '#832729', fontFamily: 'sans-serif' }} className='text-2xl font-semibold uppercase'>Your Cart Is Empty</h1>
 
-                                <div>
+                                <div className='flex flex-col justify-center items-center gap-3 flex-grow'>
                                     <Button
                                         onClick={() => navigate('/')}
                                         variant="outlined"

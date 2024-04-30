@@ -7,7 +7,7 @@ const Footer = () => {
         <div className='w-screen'>
             <Grid
                 container
-                className='text-center mt-12 sticky bottom-0 left-0 right-0 overflow-hidden w-full'
+                className='text-center mt-12 sticky bottom-0 left-0 right-0 z-50 overflow-hidden w-full'
                 sx={{ bgcolor: "#EFE3E3", color: '#852B2D', pt: 8, pb: 4, pr: 5 }}
             >
                 <Grid item xs={6} sm={6} md={3}>

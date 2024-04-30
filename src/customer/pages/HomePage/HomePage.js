@@ -20,7 +20,7 @@ const HomePage = () => {
       }
     }}>
       <MainCarousel />
-      <div className="space-y-10 py-20 flex flex-col justify-center px-5 lg:px-10">
+      <div className="home-section space-y-10 py-20 flex flex-col justify-center px-5 lg:px-10">
 
         <HomeSectionCarousel
           sectionLabel={"Best Sellers"}
@@ -31,14 +31,14 @@ const HomePage = () => {
           _id="best-of-gayatri"
         />
 
-        <div 
-          className="flex justify-around flex-wrap transition-all duration-200 items-start space-x-4 my-5 w-full h-[25rem] overflow-hidden"
-          id="offers-contest"  
+        <div
+          className="banner-div flex justify-around flex-wrap transition-all duration-200 items-start space-x-4 my-5 w-full overflow-hidden gap-5"
+          id="offers-contest"
         >
           <div
             onMouseEnter={() => setHoverFirst(true)}
             onMouseLeave={() => setHoverFirst(false)}
-            className="w-3/12 h-full shadow-md relative transition-all duration-300 ease cursor-pointer"
+            className="banners w-[350px] h-[400px] shadow-md relative transition-all duration-300 ease cursor-pointer"
           >
             {hoverFirst && (
               <div>
@@ -64,7 +64,7 @@ const HomePage = () => {
           <div
             onMouseEnter={() => setHoverSecond(true)}
             onMouseLeave={() => setHoverSecond(false)}
-            className="w-3/12 h-full shadow-md relative transition-all duration-300 ease cursor-pointer"
+            className="banners w-[350px] h-[400px] shadow-md relative transition-all duration-300 ease cursor-pointer"
           >
             {hoverSecond && (
               <div>
@@ -83,14 +83,14 @@ const HomePage = () => {
             <img
               src="https://res.cloudinary.com/deq0hxr3t/image/upload/v1710435672/8b7d5918e74a102d62d3adf67490fb53_pqrcda.jpg"
               alt=""
-              className="w-full h-full rounded-lg transition-all duration-200 overflow-hidden"
+              className="banners w-full h-full rounded-lg transition-all duration-200 overflow-hidden"
             />
           </div>
 
           <div
             onMouseEnter={() => setHoverThird(true)}
             onMouseLeave={() => setHoverThird(false)}
-            className="w-3/12 h-full shadow-md relative transition-all duration-300 ease cursor-pointer"
+            className="banners w-[350px] h-[400px] shadow-md relative transition-all duration-300 ease cursor-pointer"
           >
             {hoverThird && (
               <div>
@@ -123,21 +123,13 @@ const HomePage = () => {
           _id="new-arrivals"
         />
 
-        <div className="flex justify-center items-center px-5 ">
-          <div className="w-full h-[70vh] flex justify-center items-center gap-5 flex-wrap">
-            <img
-              onClick={() => navigate('/all-jewellery/category/necklace')}
-              src="https://res.cloudinary.com/deq0hxr3t/image/upload/v1711733524/dailwear-jewellery_ti8wdt.webp"
-              alt="necklace"
-              className="w-5/12 h-full object-contain rounded-lg cursor-pointer flex-grow"
-            />
-            <img
-              onClick={() => navigate('/gold/earrings/stud?type=gold')}
-              src="https://res.cloudinary.com/deq0hxr3t/image/upload/v1711733523/latest-earrings_osmidc.webp"
-              alt="earrings"
-              className="w-5/12 h-full object-contain rounded-md cursor-pointer flex-grow"
-            />
-          </div>
+        <div className="w-full flex justify-center items-center flex-wrap my-5">
+          <img
+            onClick={() => navigate('/all-jewellery/category/necklace')}
+            src="https://res.cloudinary.com/deq0hxr3t/image/upload/v1711733524/dailwear-jewellery_ti8wdt.webp"
+            alt="necklace"
+            className="ad-posters w-[600px] h-full object-contain rounded-lg cursor-pointer flex-grow"
+          />
         </div>
 
 
@@ -149,6 +141,15 @@ const HomePage = () => {
           }
           _id="reccomanded"
         />
+
+        <div className="w-full flex justify-center items-center flex-wrap mt-5">
+          <img
+            onClick={() => navigate('/gold/earrings/stud?type=gold')}
+            src="https://res.cloudinary.com/deq0hxr3t/image/upload/v1711733523/latest-earrings_osmidc.webp"
+            alt="earrings"
+            className="ad-posters w-[600px] h-full object-contain rounded-md cursor-pointer flex-grow"
+          />
+        </div>
         {/* <HomeSectionCarousel data={best_sellers} sectionName={"Best of Gayatri"} sectionDisc={"Browse through your favorite categories. We've got them all!"}/> */}
       </div>
     </div>

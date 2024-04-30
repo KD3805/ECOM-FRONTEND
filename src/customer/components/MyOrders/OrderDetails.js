@@ -59,8 +59,8 @@ const OrderDetails = () => {
     const { firstName, lastName, streetAddress, city, zipCode, mobile, state } = order.order?.shippingAddress || {};
 
     return (
-        <div className='p-5'>
-            <div className='p-3 bg-pink-50 text-pink-950 rounded-lg' style={{ border: '1px solid #500724' }}>
+        <div className='lg:p-5 md:p-4'>
+            <div className='p-3 mx-3 my-5 bg-pink-50 text-pink-950 rounded-lg' style={{ border: '1px solid #500724' }}>
                 <h1 className='font-bold text-xl py-3'>Delivery Address</h1>
                 <div className='space-y-2'>
                     <h1 className='text-lg font-semibold'>{firstName} {lastName}</h1>
@@ -121,7 +121,7 @@ const OrderDetails = () => {
                                         sx={{ width: "20px", height: "20px" }}
                                         className="text-pink-950 mr-2 text-sm"
                                     />
-                                    <span className="font-semibold text-pink-950 lg:text-base" 
+                                    <span className="font-semibold text-pink-950 lg:text-base md:text-sm text-base" 
                                     onClick={(e)=>{
                                         e.preventDefault();
                                         handleOpen();

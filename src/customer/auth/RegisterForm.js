@@ -139,7 +139,7 @@ const RegisterForm = () => {
 
 
     return (
-        <div>
+        <div className='auth-model'>
             <form onSubmit={handleSubmit}>
                 <h1 className='mb-5 font-semibold text-3xl text-center' style={{ color: '#832729' }}>Sign Up</h1>
                 <Grid container spacing={3}>

@@ -243,7 +243,7 @@ export default function ProductDetails() {
           {/* Product info */}
           <div className="lg:col-span-1 max-h-auto max-w-2xl px-4 pb-16 sm:px-6 lg:max-w-7xl lg:px-8 lg:pb-24">
             <div className="lg:col-span-2 pb-3 border-b-2 border-pink-950">
-              <h1 className="text-lg lg:text-2xl font-semibold text-gray-950">
+              <h1 className="text-xl lg:text-2xl md:text-2xl font-semibold text-gray-950">
                 {products.product?.title}
               </h1>
               {/* Reviews */}
@@ -278,9 +278,9 @@ export default function ProductDetails() {
               </div>
 
               <form className="mt-10">
-                <div className="flex items-center gap-5">
+                <div className="flex items-center lg:gap-5 md:gap-5 gap-4 flex-wrap ">
                   {/* Weight */}
-                  <div className="flex flex-col gap-2">
+                  <div className="flex flex-col lg:gap-2 md:gap-2 gap-1 w-[200px]">
                     <Typography
                       id="size-label"
                       sx={{ fontWeight: 600 }}
@@ -317,7 +317,7 @@ export default function ProductDetails() {
 
                   {/* Size */}
                   {products.product?.sizes[0]?.size && (
-                    <div className="flex flex-col gap-2">
+                    <div className="flex flex-col lg:gap-2 md:gap-2 gap-1 w-[200px]">
                       <Typography
                         id="size-label"
                         sx={{ fontWeight: 600 }}
@@ -363,7 +363,7 @@ export default function ProductDetails() {
                     bgcolor: "#832729",
                     "&:hover": { bgcolor: "#500724" },
                   }}
-                  className="flex w-4/12 uppercase items-center justify-center rounded-md border-none px-8 py-3 text-base font-medium text-white focus:outline-none "
+                  className="flex w-[200px] uppercase items-center justify-center rounded-md border-none px-8 py-3 text-base font-medium text-white focus:outline-none "
                 >
                   Add to Cart
                 </Button>
@@ -441,98 +441,97 @@ export default function ProductDetails() {
           </div>
         </section>
 
-        {/* Rating & Reviews */}
-        <section className="mb-20">
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-10 px-4 mb-10">
+          {/* Rating & Reviews */}
           <h1 className="font-semibold sm:pl-10 text-2xl font-sans pb-4">
             Recent Reviews & Ratings
           </h1>
 
-          <div className="py-3 px-5">
-            <Grid container spacing={7}>
-              {/* Review */}
-              <Grid item xs={12} lg={7}>
-                <div className="space-y-5 h-[40vh] overflow-y-scroll">
-                  {products.product?.reviews.length !== 0 ? (
-                    <div>
-                      {products.product?.reviews?.map((item, index) => (
-                        <ProductReviewCard
-                          reviewData={item}
-                          ratingData={products.product?.ratings?.[index]}
-                          key={index}
-                        />
-                      ))}
+          <Grid container spacing={7}>
+            {/* Review */}
+            <Grid item xs={12} lg={7}>
+              <div className="lg:space-y-5 md:space-y-5 space-y-2 h-[40vh] overflow-y-scroll">
+                {products.product?.reviews.length !== 0 ? (
+                  <div>
+                    {products.product?.reviews?.map((item, index) => (
+                      <ProductReviewCard
+                        reviewData={item}
+                        ratingData={products.product?.ratings?.[index]}
+                        key={index}
+                      />
+                    ))}
+                    <Button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleOpenModal();
+                      }}
+                      variant="outlined"
+                      type="submit"
+                      sx={{ fontSize: '0.75rem', fontWeight: 'bold', color: '#832729', borderColor: '#832729', "&:hover": { boxShadow: "#832729 0px 0px 10px", borderColor: '#832729' }, }}
+                      className="p-2 my-4 mx-auto flex items-center justify-center rounded-md border-none focus:outline-none"
+                    >
+                      ✍🏻 Write a Review
+                    </Button>
+                  </div>
+                ) : (
+                  <div className="flex items-center justify-center h-[15rem]">
+                    <div className="flex flex-col items-center justify-center space-y-4">
+                      <StyledRating value={5} precision={0.1} readOnly />
                       <Button
                         onClick={(e) => {
                           e.preventDefault();
                           handleOpenModal();
                         }}
-                        variant="outlined"
-                        type="submit"
-                        sx={{ fontSize: '0.75rem', fontWeight: 'bold', color: '#832729', borderColor: '#832729', "&:hover": { boxShadow: "#832729 0px 0px 10px", borderColor: '#832729' }, }}
-                        className="p-2 my-4 mx-auto flex items-center justify-center rounded-md border-none focus:outline-none"
+                        variant="contained"
+                        type="button"
+                        sx={{
+                          fontSize: '0.75rem',
+                          bgcolor: "#832729",
+                          "&:hover": { bgcolor: "#500724" },
+                        }}
+                        className="flex uppercase items-center justify-center rounded-md border-none px-8 py-2 font-medium text-white focus:outline-none "
                       >
-                        ✍🏻 Write a Review
+                        Be the first to write a review
                       </Button>
                     </div>
-                  ) : (
-                    <div className="flex items-center justify-center h-[15rem]">
-                      <div className="flex flex-col items-center justify-center space-y-4">
-                        <StyledRating value={5} precision={0.1} readOnly />
-                        <Button
-                          onClick={(e) => {
-                            e.preventDefault();
-                            handleOpenModal();
-                          }}
-                          variant="contained"
-                          type="button"
-                          sx={{
-                            fontSize: '0.75rem',
-                            bgcolor: "#832729",
-                            "&:hover": { bgcolor: "#500724" },
-                          }}
-                          className="flex uppercase items-center justify-center rounded-md border-none px-8 py-2 font-medium text-white focus:outline-none "
-                        >
-                          Be the first to write a review
-                        </Button>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </Grid>
-
-              {/* Rating */}
-              <Grid item xs={12} lg={5}>
-                <h1 className="text-xl font-semibold pb-1">Product Rating</h1>
-
-                <div className="flex items-center space-x-3">
-                  <StyledRating value={4.6} precision={0.1} readOnly />
-                  <p className="text-sm text-gray-600">5643 reviews</p>
-                </div>
-
-                <Box className="mt-5 space-y-5">
-                  {ratings.map((item) => (
-                    <ProductRatingBox
-                      category={item.category}
-                      ratingValue={item.rayingValue}
-                      color={item.color}
-                    />
-                  ))}
-                </Box>
-              </Grid>
+                  </div>
+                )}
+              </div>
             </Grid>
-          </div>
-        </section>
 
-        {/* Similar Products */}
-        <section className="mb-20">
-          <h1 className="font-semibold text-2xl font-sans sm:pl-10">
-            You May Also Like
-          </h1>
+            {/* Rating */}
+            <Grid item xs={12} lg={5}>
+              <h1 className="text-xl font-semibold pb-1">Product Rating</h1>
 
-          <HomeSectionCarousel
-            sectionLabel={"similar"}
-            sectionCategory={products?.product?.category?.name}
-          />
+              <div className="flex items-center space-x-3">
+                <StyledRating value={4.6} precision={0.1} readOnly />
+                <p className="text-sm text-gray-600">5643 reviews</p>
+              </div>
+
+              <Box className="mt-5 space-y-5">
+                {ratings.map((item) => (
+                  <ProductRatingBox
+                    category={item.category}
+                    ratingValue={item.rayingValue}
+                    color={item.color}
+                  />
+                ))}
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* Similar Products */}
+          <section className="mb-20">
+            <h1 className="font-semibold lg:text-2xl md:text-2xl text-xl mb-8 font-sans sm:pl-10">
+              You May Also Like
+            </h1>
+
+            <HomeSectionCarousel
+              sectionLabel={"similar"}
+              sectionCategory={products?.product?.category?.name}
+            />
+          </section>
+
         </section>
       </div >
 

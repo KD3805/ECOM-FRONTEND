@@ -397,7 +397,7 @@ export default function Navigation() {
                           <div key={section.id}>
                             <p
                               id={`${category.id}-${section.id}-heading-mobile`}
-                              className="font-medium text-gray-900"
+                              className="font-semibold text-pink-900"
                             >
                               {section.name}
                             </p>
@@ -471,9 +471,9 @@ export default function Navigation() {
             </div>
 
             {/* customer's action buttons */}
-            <div className="flex items-center justify-end space-x-8 user-btns">
+            <div className="flex items-center justify-end space-x-8 user-nav-btns">
               <div
-                className="h-[10vh] flex items-center justify-center relative unline-navigation"
+                className="nav-btn h-[10vh] flex items-center justify-center relative unline-navigation"
                 onMouseEnter={() => setIsHovering(true)}
                 onMouseLeave={() => setIsHovering(false)}
               >
@@ -488,7 +488,7 @@ export default function Navigation() {
 
                   {!auth.user?.firstName
                     ? isHovering && (
-                      <div className="p-3 absolute top-[10vh] z-50 w-[16rem] text-center bg-white rounded-md shadow-lg space-y-3 text-pink-950 transition-all duration-1000">
+                      <div className="nav-btn-menu p-3 absolute top-[10vh] z-50 w-[16rem] text-center bg-white rounded-md shadow-lg space-y-3 text-pink-950 transition-all duration-1000">
                         <h1 className="text-2xl font-normal uppercase">
                           My Account
                         </h1>
@@ -532,7 +532,7 @@ export default function Navigation() {
                     )
                     : isHovering && (
                       <div
-                        className="p-3 absolute top-[10vh] z-50 w-[13rem] flex flex-col bg-white rounded-md shadow-lg space-y-2 transition-all duration-1000 uppercase"
+                        className="nav-btn-menu p-3 absolute top-[10vh] z-50 w-[13rem] flex flex-col bg-white rounded-md shadow-lg space-y-2 transition-all duration-1000 uppercase"
                         style={{ color: "#832729" }}
                       >
                         <div className="px-2 pb-3 flex flex-col border-b-2 border-pink-950 space-y-1">
@@ -603,7 +603,7 @@ export default function Navigation() {
                 </div>
               </div>
 
-              <div className="h-[10vh] flex items-center justify-center unline-navigation relative">
+              <div className="nav-btn h-[10vh] flex items-center justify-center unline-navigation relative">
                 {/* Favourite */}
                 <div
                   onClick={() => {
@@ -627,7 +627,7 @@ export default function Navigation() {
               </div>
 
               {/* Cart */}
-              <div className="h-[10vh] flex items-center justify-center unline-navigation relative">
+              <div className="nav-btn h-[10vh] flex items-center justify-center unline-navigation relative">
                 <div
                   onClick={() => {
                     navigate("/cart");
@@ -654,7 +654,7 @@ export default function Navigation() {
           className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
         >
           <div className="border-b border-gray-200">
-            <div className="flex h-16 items-center">
+            <div className="flex h-16 mb-0 items-center">
 
               {/* Flyout menus */}
               <Popover.Group className="hidden z-50 lg:ml-8 lg:block lg:self-stretch">

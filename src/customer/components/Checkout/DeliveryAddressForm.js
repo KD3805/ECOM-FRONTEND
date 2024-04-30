@@ -74,7 +74,7 @@ const DeliveryAddressForm = () => {
                 <hr />
                 <div>
                   {auth.user?.address.map((address) => (
-                    <div className='p-3 rounded-lg' style={{ border: '1px solid #500724' }}>
+                    <div className='p-3 rounded-lg my-3' style={{ border: '1px solid #500724' }}>
                       <div className='space-y-2'>
                         <h1 className='text-lg font-semibold'>{address.firstName} {address.lastName}</h1>
                         <p className='text-sm text-gray-500 font-normal'>{address.streetAddress}, {address.city}, {address.state}, {address.zipCode}</p>
@@ -87,7 +87,7 @@ const DeliveryAddressForm = () => {
                           console.log(address)
                         }}
                         sx={{ my: '1rem', fontSize: '0.75rem', color: '#832729', borderColor: '#832729', "&:hover": { bgcolor: "#832729", color: '#fff', borderColor: '#832729' }, }}
-                        className="flex w-4/12 items-center justify-center rounded-md border-none px-3 py-1"
+                        className="flex w-full items-center justify-center rounded-md border-none px-3 py-1"
                       >
                         Use This Address
                       </Button>
@@ -102,7 +102,7 @@ const DeliveryAddressForm = () => {
 
         <Grid item xs={12} lg={7}>
 
-          <Box className="border rounded-s-md shadow-md p-5">
+          <Box className="border rounded-s-md shadow-md lg:p-5 md:p-4 p-3">
 
             <form onSubmit={handleSubmit}>
               <Grid container spacing={3}>
@@ -139,7 +139,7 @@ const DeliveryAddressForm = () => {
                   />
                 </Grid>
 
-                <Grid item sm={12}>
+                <Grid item sm={12} xs={12}>
                   <CssTextField
                     id='address'
                     name='address'
@@ -226,7 +226,7 @@ const DeliveryAddressForm = () => {
                   variant="contained"
                   type="submit"
                   sx={{ mt: '2rem', ml: '1.5rem', bgcolor: '#832729', "&:hover": { bgcolor: "#500724" }, }}
-                  className="flex w-4/12 uppercase items-center justify-center rounded-md border-none px-8 py-3 text-base font-medium text-white focus:outline-none "
+                  className="flex w-[200px] mb-3 uppercase items-center justify-center rounded-md border-none px-8 py-3 text-base font-medium text-white focus:outline-none "
                 >
                   Deliver Here
                 </Button>

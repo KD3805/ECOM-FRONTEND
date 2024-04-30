@@ -61,7 +61,7 @@ const WishList = () => {
         </div>
       )
       :
-      (<div className='relative p-4 flex gap-3 flex-wrap flex-grow'>
+      (<div className='relative p-4 flex gap-4 flex-wrap items-center justify-center flex-grow'>
         {
           wishlist && wishlist.wishItems && wishlist.wishItems.map((item) => {
             const product = item?.product; // Modified to use optional chaining

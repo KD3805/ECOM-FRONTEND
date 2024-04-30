@@ -2,9 +2,9 @@ import React from 'react'
 
 const ContactUs = () => {
   return (
-    <div className='h-full bg-pink-50 w-full flex justify-center items-center flex-col gap-5'>
+    <div className='h-full bg-pink-50 w-full flex justify-center items-center flex-col gap-5 contact-us-div'>
       <div className='text-center flex justify-center items-center flex-col gap-4'>
-      <h1 className='text-5xl font-semibold' style={{color: '#852B2D'}}>Help & Contact</h1>
+      <h1 className='lg:text-5xl md:text-4xl text-4xl font-semibold' style={{color: '#852B2D'}}>Help & Contact</h1>
         <h1 className='text-xl font-semibold text-center'>Feel free to ask any questions you may have. <br/>We are here to help!</h1>
       </div>
       <div className='flex gap-3'>

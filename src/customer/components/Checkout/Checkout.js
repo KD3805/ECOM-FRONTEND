@@ -119,7 +119,7 @@ export default function Checkout() {
 
 
     return (
-        <div className='p-10 lg:px-20 lg:py-10' onLoad={() => {
+        <div className='checkout-div p-10 lg:px-20 lg:py-10' onLoad={() => {
             // const isAuthenticated = ;
 
             if(!(localStorage.getItem('jwt') !== null)) {

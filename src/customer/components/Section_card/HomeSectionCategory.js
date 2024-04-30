@@ -53,7 +53,7 @@ const HomeSectionCategory = () => {
       <div>
         <h2
           style={{ letterSpacing: "1px" }}
-          className="text-4xl font-semibold text-pink-950 text-center px-10"
+          className="lg:text-4xl md:text-3xl text-3xl font-semibold text-pink-950 text-center px-10"
         >
           Shop By Category
         </h2>
@@ -69,7 +69,7 @@ const HomeSectionCategory = () => {
         {
           categories.map((item) => (
             <Link to={`${item.nav}`} target="_blank" rel="noopener noreferrer">
-              <div key={`${item.nav}`} className='flex flex-col flex-wrap h-fit w-[12vw] border rounded-sm hover:shadow-lg transition-all duration-300 cursor-pointer'>
+              <div key={`${item.nav}`} className='flex flex-col flex-wrap h-fit w-[230px] border rounded-sm hover:shadow-lg transition-all duration-300 cursor-pointer'>
                 <div className=' border rounded-sm'>
                   <div className='w-full h-[20vh]'>
                     <img src={item.img} alt="jewelery" className='h-full w-full object-cover ' />

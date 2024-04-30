@@ -108,7 +108,7 @@ export default function OrderTracker({activeStep}) {
 
 
     return (
-        <div className='p-10 lg:px-20 lg:py-10'>
+        <div className='lg:px-20 lg:py-10'>
             <Stack sx={{ width: '100%' }}>
                 <Stepper alternativeLabel activeStep={activeStep} connector={<ColorlibConnector />}>
                     {steps.map((label) => (

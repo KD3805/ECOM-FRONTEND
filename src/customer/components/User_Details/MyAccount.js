@@ -8,7 +8,7 @@ const MyAccount = () => {
 
   return (
     <div className='h-full w-full flex justify-center items-center' >
-      <div className='w-[50vw] h-fit border-pink-900 rounded-md' style={{border: '1px solid #852B2D'}}>
+      <div className='w-[750px] box-border h-fit border-pink-900 rounded-md' style={{border: '1px solid #852B2D'}}>
         <h1 className='bg-pink-100 p-3 font-semibold text-lg' style={{color: "#852B2D", borderBottom: '1px solid #852B2D'}}>Personal Information</h1>
         <div className='p-3'>
         <table className='w-1/2'>

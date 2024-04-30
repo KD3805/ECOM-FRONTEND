@@ -79,7 +79,7 @@ export default function RatingReviewForm({ open, handleClose }) {
     }
 
     return (
-        <div>
+        <div className='auth-model'>
             <Modal
                 open={open}
                 onClose={handleClose}
@@ -87,7 +87,7 @@ export default function RatingReviewForm({ open, handleClose }) {
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={style}>
-                    <div>
+                    <div className='auth-model'>
                         <form onSubmit={handleSubmit}>
                             <h1 className='mb-5 font-semibold text-3xl text-center' style={{ color: '#832729' }}>Ratings & Review</h1>
                             <Grid container spacing={3}>

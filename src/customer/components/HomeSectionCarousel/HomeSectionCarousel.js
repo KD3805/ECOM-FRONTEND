@@ -109,12 +109,12 @@ const HomeSectionCarousel = ({
         : null;
 
     return (
-        <div className="my-5" id={_id}>
+        <div className="my-3" id={_id}>
             {sectionName && (
                 <div>
                     <h2
                         style={{ letterSpacing: "1px" }}
-                        className="text-4xl font-semibold text-pink-950 text-center px-10"
+                        className="lg:text-4xl md:text-3xl text-3xl font-semibold text-pink-950 text-center px-10"
                     >
                         {sectionName}
                     </h2>
